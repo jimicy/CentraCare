@@ -34,7 +34,37 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 app.use('/', routes);
-app.use('/users', users);
+// app.use('/users', users);
+
+//User routing
+app.get('/users/', function(req, res, next) {
+  console.log("hello word");
+  User.find(function(err, users){
+    if (err) return next(err);
+    return res.send(users);
+  });
+});
+
+app.get('/users/:user_id', function(req, res, next) {
+  var user_id = req.params.user_id;
+
+  User.findById(user_id, function(err, user){
+    if (err) return next(err);
+    return res.send(user);
+  });
+});
+
+app.post('/users/', function(req, res, next) {
+  var newUser = new User();
+  newUser.name = req.body.name;
+  newUser.date = req.body.date;
+  newUser.description = req.body.description;
+
+  newUser.save(function(err, savedUser){
+    if (err) return next(err);
+    return res.send(savedUser);
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
