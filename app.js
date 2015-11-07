@@ -28,15 +28,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Models
 var User = require('./models/user.js');
+var Patient = require('./models/patient.js');
 
 //routes
 var routes = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 
 app.use('/', routes);
 // app.use('/users', users);
 
-//User routing
+//User routing---------------------------------------
 app.get('/users/', function(req, res, next) {
   console.log("hello word");
   User.find(function(err, users){
@@ -65,6 +66,7 @@ app.post('/users/', function(req, res, next) {
     return res.send(savedUser);
   });
 });
+//---------------------------------------------------
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

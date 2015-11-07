@@ -3,8 +3,11 @@ var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
  name: String,
- date: Date,
- description: String
+ email: String,
+ password: String,
+ type: String, //Patient, CareGiver, Other
+ patient_permissions: [{patient_id: String, editable: Boolean, viewable: Boolean}],
+ profile_image: String,
 });
 
 module.exports = mongoose.model('User', UserSchema);
