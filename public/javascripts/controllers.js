@@ -464,12 +464,12 @@ app.controller('EmailController', ['$scope', function($scope){
 	console.log(html);
 
 	$scope.submit = function(){
-		  		console.log(mail, message)
+		console.log(mail, html)
 		localStorage.setItem("sendTo", mail);
 		$.ajax({
 			type: "POST",
 			url: "/mail",
-			data: {"sendTo": mail, "body": message },
+			data: {"sendTo": mail, "body": html },
 			success: function(data){
 				console.log(data)
 			},
