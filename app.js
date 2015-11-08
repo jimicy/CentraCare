@@ -70,15 +70,20 @@ var loggedInUser;
 var User = require('./models/User');
 
 //Routing
-var routes = require('./routes/index');
+// var routes = require('./routes/index');
 var users = require('./routes/users');
 var patients = require('./routes/patients');
 // var login = require('./routes/login');
 
-app.use('/', routes);
+// app.use('/', routes);
 app.use('/users', users);
 app.use('/patients', patients);
 // app.use('/login', login);
+
+app.get('/', function(req, res, next) {
+  res.render('index', {user: loggedInUser});
+  // res.render('index', {user: req.user});
+});
 
 app.get('/login', function(req, res) {
   res.render('login', {user: loggedInUser});
@@ -87,7 +92,9 @@ app.get('/login', function(req, res) {
 
 app.post('/login', function(req, res, next) {
   loggedInUser = User.find({email: "jimmyw22@gmail.com"});
-  passport.authenticate('local', function(err, user, info) {
+  res.redirect('/');
+
+/*  passport.authenticate('local', function(err, user, info) {
     if (err) return next(err);
     if (!user) {
       return res.redirect('/login');
@@ -96,7 +103,7 @@ app.post('/login', function(req, res, next) {
       if (err) return next(err);
       return res.redirect('/');
     });
-  })(req, res, next);
+  })(req, res, next);*/
 });
 
 app.get('/signup', function(req, res) {

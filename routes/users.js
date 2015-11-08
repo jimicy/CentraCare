@@ -25,9 +25,13 @@ router.get('/:user_id', function(req, res, next) {
 router.put('/', function(req, res, next) {
   var newUser = new User();
 
-  newUser.name = req.body.name;
-  newUser.date = req.body.date;
-  newUser.description = req.body.description;
+  if (!User.find()) {
+    newUser.email = "jimmyw22@gmail.com";
+    newUser.password = "hackitmac";
+    newUser.patient_permissions = [{email: "wang638@mcmaster.ca", editable: true, viewable: true},
+                                   {email: "test@mcmaster.ca", editable: true, viewable: true}];
+    newUser.profile_image = "https://s3.amazonaws.com/uifaces/faces/twitter/jadlimcaco/128.jpg";
+  }
 
   newUser.save(function(err, savedUser){
     if (err) return next(err);
