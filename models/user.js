@@ -8,7 +8,7 @@ var UserSchema = new Schema({
  resetPasswordToken: String,
  resetPasswordExpires: Date,
  isCareGiver: Boolean,
- patient_permissions: [{email: String, editable: Boolean, viewable: Boolean}],
+ patient_permissions: [{patient_id: String, editable: Boolean, viewable: Boolean}],
  profile_image: String
 });
 

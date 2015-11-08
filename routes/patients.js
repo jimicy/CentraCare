@@ -23,8 +23,6 @@ router.put('/', function(req, res, next) {
   var newUser = new Patient();
 
   newUser.name = req.body.name;
-  newUser.date = req.body.date;
-  newUser.description = req.body.description;
 
   newUser.save(function(err, savedUser){
     if (err) return next(err);
