@@ -433,4 +433,23 @@ app.controller('MCController', ['$scope', function($scope){
 		$scope.getData();
 		$scope.update();
 	}
+}]);
+
+app.controller('EmailController', ['$scope', function($scope){
+	$scope.submit = function(event) {
+		event.preventDefault();
+		var sendTo = $('#inputEmail').val().split(',');
+		var msg = "<img src=\"http://i.imgur.com/ja28yLG.jpg\" />"
+
+		$.ajax({
+			type: "POST",
+			url: "/mail",
+			data: JSON.stringify({"sendTo": sendTo,
+								  "body": msg }),
+			success: function(data){
+				console.log(data)
+			},
+			dataType: "json"
+		});
+	};
 }])
