@@ -251,7 +251,7 @@ app.controller('SCController', ['$scope', function($scope){
 
 		{ Question: "Changing Clothing",
 		Type: "Scale",
-		Options: ["""Changes clothing regularly and independently.","Changes clothing with occasional prompting","Changes clothing with frequent prompting.","Major problems with this item."],
+		Options: ["Changes clothing regularly and independently.","Changes clothing with occasional prompting","Changes clothing with frequent prompting.","Major problems with this item."],
 		Answer: ""
 		},
 
@@ -292,5 +292,54 @@ app.controller('SCController', ['$scope', function($scope){
 		Answer: ""
 		}
 	]
-	
+
+	$scope.submit = function(form) {
+		var editedFields = [];
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer;
+			if ($(dom).hasClass('radio')) {
+				answer = ($(dom).find('input[name='+$(dom).attr("id")+']:checked').val());
+			}else{
+				answer = ($(dom).val());
+			}
+			$scope.Questions[index].Answer = answer;
+		});
+
+		$.ajax({
+			type: "POST",
+			url: "/app",
+			data: JSON.stringify($scope.Questions),
+			success: function(data){
+				console.log(data)
+			},
+			dataType: "json"
+		});
+
+	}
+
+	$scope.getData = function(){
+
+	};
+
+	$scope.update = function() {
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer = $scope.Questions[index].Answer;
+			if (answer.length > 0) {
+				if ($(dom).hasClass('radio')) {
+					$(dom).find('input[value='+answer+']').prop("checked", true);
+				}else{
+					$(dom).val(answer)  ;
+				}
+			}
+			$scope.Questions[index].Answer = answer;
+		});
+	}
+
+	$scope.init = function() {
+		$scope.getData();
+		$scope.update();
+	}
+
 }])
