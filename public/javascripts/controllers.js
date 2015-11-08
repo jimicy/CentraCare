@@ -130,19 +130,20 @@ app.controller('ProfileController', ['$scope', function($scope){
 app.controller('SPController', ['$scope', function($scope) {
 	$scope.Questions = [
 		{
-			Question: "What language do you prefer?",
+			Question: "What language(s) do you prefer?",
+			Helper: "E.g English, French, Mandarin, Spanish, Italian, etc",
 			Type: "Text",
 			Answer: ""
 		},
 		{
-			Question: "What are your trigger words?",
-			Helper: "i.e. anxiety inducing words",
+			Question: "What are your trigger (anxiety inducing) words?",
+			Helper: "E.g. no, stop, never, etc.",
 			Type: "Text",
 			Answer: ""
 		},
 		{
-			Question: "What are your soothing words?",
-			Helper: "",
+			Question: "What are your soothing (relaxing) words?",
+			Helper: "E.g. relax, friend, warm, etc.",
 			Type: "Text",
 			Answer: ""
 		},
@@ -170,12 +171,13 @@ app.controller('SPController', ['$scope', function($scope) {
 		},
 		{
 			Question: "How many close relaitonships do you have?",
-			Helper: "E.g. friends, family, spouse",
+			Helper: "E.g. friends, family, spouse, etc.",
 			Type: "Text",
 			Answer: "None"
 		},
 		{
 			Question: "Do you feel more comfortable with certain race (please specify)?",
+			Helper: "E.g. Caucasian, African American, Oriental, Hispanic, Aboriginal, etc.",
 			Type: "Text",
 			Answer: ""
 		}
@@ -230,3 +232,65 @@ app.controller('SPController', ['$scope', function($scope) {
 		$scope.update();
 	}
 }]);
+
+app.controller('SCController', ['$scope', function($scope){
+	$scope.Questions = [
+
+		{ Question: "Personal Appearance ",
+		Type: "Scale",
+		Options: ["Maintains a neat and tidy appearance without help or prompting from staff","Maintains neat appearance but needs some supervision","Maintains a neat appearance with close and regular supervision","Does not maintain neat appearance, even with supervision","Major problems with this item"],
+		Answer: ""
+		},
+
+
+		{ Question: "Appropriate of Clothing",
+		Type: "Scale",
+		Options: ["Dresses appropriately without prompting. Wear clothing appropriate to age, sex and weather.","Dresses appropriately with occasional supervision or prompting.","Needs close supervision to ensure appropriateness of dress.","Rarely dresses appropriately, even with close supervision.","Major problems with this item."],
+		Answer: ""
+		},
+
+		{ Question: "Changing Clothing",
+		Type: "Scale",
+		Options: ["""Changes clothing regularly and independently.","Changes clothing with occasional prompting","Changes clothing with frequent prompting.","Major problems with this item."],
+		Answer: ""
+		},
+
+		{ Question: "Washing Hands and Face",
+		Type: "Scale",
+		Options: ["Keeps hands and face clean independently.","Needs occasional prompting.","Needs frequent prompting.","Major problems with this item."],
+		Answer: ""
+		},
+
+		{ Question: "Shaving",
+		Type: "Scale",
+		Options: ["Shaves independently","Needs occasional prompting or help.","Needs frequent prompting or help.","Major problems with this item."],
+		Answer: ""
+		},
+
+		{ Question: "Menstruation ",
+		Type: "Scale",
+		Options: ["Manages menstruation adequately and independently.","Manages menstruation with occasional prompting and help.","Manages menstruation with frequent prompting and help.","Major problems with this item."],
+		Answer: ""
+		},
+
+
+		{ Question: "Bathing/Hair Washing ",
+		Type: "Scale",
+		Options: ["Does these tasks regularly and independently.","Does these tasks with occasional prompting.","Does these tasks with frequently prompting.","Major problems with this item."],
+		Answer: ""
+		},
+
+		{ Question: "Toileting ",
+		Type: "Scale",
+		Options: ["Uses toilet appropriately and independently.","Needs occasional help (e.g. not using toilet properly, poor cleanliness).","Frequently needs help (e.g. poor habits in the use of toilet, occasional incontinence).","Major problems with this item (e.g. frequent incontinence, severe problems with cleanliness)."],
+		Answer: ""
+		},
+
+		{ Question: "Teeth Cleaning/Dentures ",
+		Type: "Scale",
+		Options: ["Cleans teeth independently/looks after dentures.","Needs occasional prompting.","Needs frequent prompting.","Major problems with this item (e.g. no real or false teeth, refusal to attend to teeth)."],
+		Answer: ""
+		}
+	]
+	
+}])

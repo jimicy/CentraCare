@@ -5,6 +5,14 @@ a {
   color: #00B7FF;
 }
 
+.radio, .radio label {
+    margin-top: 0;
+}
+
+label {
+    margin-top: 25px;
+}
+
 .form-signin
 {
     max-width: 330px;
