@@ -159,8 +159,10 @@ app.get('/app', function(req, res){
   res.render('app');
 });
 app.post('/app', function(req, res){
-  console.log(req.body);
-  res.send(req.body);
+  Patient.findById(loggedInUser.patient_permissions[0].patient_id, function(err, patient) {
+    console.log(JSON.parse(keys(req.body)));
+    // patient.form.profile.push(req.body[])
+  });
 });
 
 // catch 404 and forward to error handler
