@@ -14,7 +14,20 @@ app.controller('ExportController', ['$scope', function($scope) {
   console.log("load export success");
 }]);
 
-var temp;
+function mail (mail, message){
+  		console.log(mail, message)
+		localStorage.setItem("sendTo", mail);
+		$.ajax({
+			type: "POST",
+			url: "/mail",
+			data: JSON.stringify({"sendTo": mail,
+								  "body": message }),
+			success: function(data){
+				console.log(data)
+			},
+			dataType: "json"
+		});
+};
 
 app.controller('ProfileController', ['$scope', function($scope){
 
@@ -322,6 +335,7 @@ app.controller('SCController', ['$scope', function($scope){
 		// });
 		localStorage.setItem("selfCare", JSON.stringify({"selfCare": $scope.Questions}));
 
+
 	}
 
 	$scope.getData = function(){
@@ -433,4 +447,25 @@ app.controller('MCController', ['$scope', function($scope){
 		$scope.getData();
 		$scope.update();
 	}
+}]);
+
+app.controller('EmailController', ['$scope', function($scope){
+	var mail = $('#inputEmail').val().split(',');
+	var message = "<img src=\"http://i.imgur.com/ja28yLG.jpg\" />"
+
+	$scope.submit = function(){
+		  		console.log(mail, message)
+		localStorage.setItem("sendTo", mail);
+		$.ajax({
+			type: "POST",
+			url: "/mail",
+			data: JSON.stringify({"sendTo": mail,
+								  "body": message }),
+			success: function(data){
+				console.log(data)
+			},
+			dataType: "json"
+		});
+
+	};
 }])
