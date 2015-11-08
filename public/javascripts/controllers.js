@@ -117,7 +117,7 @@ app.controller('ProfileController', ['$scope', function($scope){
 	};
 
 	$scope.getData = function(){
-		$scope.Questions = JSON.parse(localStorage.getItem("Profile")).Profile;
+		$scope.Questions = JSON.parse(localStorage.getItem("Profile")).Content;
 
 	};
 
@@ -225,7 +225,7 @@ app.controller('SPController', ['$scope', function($scope) {
 	}
 
 	$scope.getData = function(){
-		$scope.Questions = JSON.parse(localStorage.getItem("Personal")).Personal;
+		$scope.Questions = JSON.parse(localStorage.getItem("Personal")).Content;
 
 	};
 
@@ -339,7 +339,7 @@ app.controller('SCController', ['$scope', function($scope){
 	}
 
 	$scope.getData = function(){
-		$scope.Questions = JSON.parse(localStorage.getItem("selfCare")).selfCare;
+		$scope.Questions = JSON.parse(localStorage.getItem("selfCare")).Content;
 
 	};
 
@@ -418,7 +418,7 @@ app.controller('MCController', ['$scope', function($scope){
 	}
 
 	$scope.getData = function(){
-		$scope.Questions = JSON.parse(localStorage.getItem("medCond")).medCond;
+		$scope.Questions = JSON.parse(localStorage.getItem("medCond")).Content;
 
 	};
 
@@ -451,7 +451,17 @@ app.controller('MCController', ['$scope', function($scope){
 
 app.controller('EmailController', ['$scope', function($scope){
 	var mail = $('#inputEmail').val().split(',');
-	var message = "<img src=\"http://i.imgur.com/ja28yLG.jpg\" />"
+	var content = JSON.parse(localStorage.getItem("Profile")).Content;
+	console.log(content)
+	var html = "<h1>Personal</h1>";
+
+	$.each(content, function(index, obj) {
+		if (obj.Answer > "") {
+			console.log(obj.Answer)
+			html += "<p>"+obj.Question+"</p>"+"<p>"+obj.Answer+"</p>";
+		}
+	});
+	console.log(html);
 
 	$scope.submit = function(){
 		  		console.log(mail, message)
