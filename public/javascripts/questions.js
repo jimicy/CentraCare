@@ -95,7 +95,7 @@ SocialPersonal =
 		},
 		{
 			Question: "What are your cherished past memories?",
-			Helper: "e.g. childhood friends, family vocations, etc.",
+			Helper: "i.e. childhood friends, family vocations, etc.",
 			Type: "Textarea",
 			Answer: ""
 		},
@@ -116,8 +116,8 @@ SocialPersonal =
 			Answer: ""
 		},
 		{
-			Question: "How many close relaitonships do you have?",
-			Helper: "E.g. friends, family, spouse",
+			Question: "How many close relationships do you have?",
+			Helper: "i.e. friends, family, spouse",
 			Type: "Text",
 			Answer: ""
 		},
@@ -140,13 +140,23 @@ with this item"],
 	}
 ]
 
-newvar = [
+stageDementia = [
 	{
-		Question: "",
+		Question: "What stage of dementia are you at? ",
 		Type: "MC",
-		Options: []
+		Options: ["Early", "Middle", "Late"]
 		Answer:""
 	},
+]
+
+medicalConditions = [
+	{
+		Question: "What other medical conditions do you have?"
+		Type: "CheckList"
+		Options: ["Heart disease / Murmur / Angina", "High cholesterol", "High blood pressure", "Low blood pressure" , "Heartburn (reflux)", "Anemia or blood problems ", "Swollen ankles", "Shortness of breathe ", "Asthma", "Lung problems / cough", "Sinus problems", "Seasonal allergies", "Tonsillitis", "Ear problems", "Eye disorder / Glaucoma", "Seizures", "Stroke", "Headaches / Migraines", "Neurological problems", "Depression / Anxiety", "Psychiatric care", "Diabetes", "Kidney / Bladder problems", "Liver problems / Hepatitis", "Arthritis", "Cancer", "Ulcers/colitis", "Thyroid problems"]
+
+	},
+]
 	
 
 	selfCare = [
