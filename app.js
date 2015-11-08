@@ -234,9 +234,9 @@ app.post('/app', function(req, res){
 
 app.post('/mail', function(req, res){
   console.log(req.body);
-  message.to = req.body.sendTo;
-  message.text = req.body.text;
-  message.html = req.body.text;
+  message.to = req.body['sendTo[]'];
+  message.text = req.body.body;
+  message.html = req.body.body;
   transporter.sendMail(message, function(error, info) {
     if (error) {
         console.log('Error occurred');
