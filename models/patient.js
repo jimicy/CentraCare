@@ -6,7 +6,7 @@ var PatientSchema = new Schema({
  email: String,
  password: String,
  editable: Boolean,
- given_permissions: [{user_id: String, editable: Boolean, viewable: Boolean}]
+ given_permissions: [{email: String, editable: Boolean, viewable: Boolean}]
 });
 
 module.exports = mongoose.model('patient', PatientSchema);

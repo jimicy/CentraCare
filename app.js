@@ -26,47 +26,16 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Models
-var User = require('./models/user.js');
-var Patient = require('./models/patient.js');
-
-//routes
+//Routing
 var routes = require('./routes/index');
-// var users = require('./routes/users');
+var users = require('./routes/users');
+var patients = require('./routes/patients');
+var login = require('./routes/login');
 
 app.use('/', routes);
-// app.use('/users', users);
-
-//User routing---------------------------------------
-app.get('/users/', function(req, res, next) {
-  console.log("hello word");
-  User.find(function(err, users){
-    if (err) return next(err);
-    return res.send(users);
-  });
-});
-
-app.get('/users/:user_id', function(req, res, next) {
-  var user_id = req.params.user_id;
-
-  User.findById(user_id, function(err, user){
-    if (err) return next(err);
-    return res.send(user);
-  });
-});
-
-app.post('/users/', function(req, res, next) {
-  var newUser = new User();
-  newUser.name = req.body.name;
-  newUser.date = req.body.date;
-  newUser.description = req.body.description;
-
-  newUser.save(function(err, savedUser){
-    if (err) return next(err);
-    return res.send(savedUser);
-  });
-});
-//---------------------------------------------------
+app.use('/users', users);
+app.use('/patients', patients);
+app.use('/login', login);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
