@@ -1,3 +1,10 @@
+var crypto = require('crypto');
+var bcrypt = require('bcrypt-nodejs');
+var nodemailer = require('nodemailer');
+var passport = require('passport');
+var User = require('../models/User');
+var User = require('../models/User');
+
 var express = require('express');
 var router = express.Router();
 
@@ -6,16 +13,16 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  var newUser = new Patient();
-
-  newUser.name = req.body.name;
-  newUser.date = req.body.date;
-  newUser.description = req.body.description;
-
-  newUser.save(function(err, savedUser){
+  passport.authenticate('local', function(err, user, info) {
     if (err) return next(err);
-    return res.send(savedUser);
-  });
+    if (!user) {
+      return res.redirect('/login');
+    }
+    req.logIn(user, function(err) {
+      if (err) return next(err);
+      return res.redirect('/');
+    });
+  })(req, res, next);
 });
 
 module.exports = router;

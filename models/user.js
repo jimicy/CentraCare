@@ -1,15 +1,15 @@
 var mongoose = require("mongoose");
+var bcrypt = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
- username: { type: String, required: true, unique: true },
  email: { type: String, required: true, unique: true },
  password: { type: String, required: true },
  resetPasswordToken: String,
  resetPasswordExpires: Date,
  isCareGiver: Boolean,
- patient_permissions: [{patient_id: String, editable: Boolean, viewable: Boolean}],
- profile_image: String,
+ patient_permissions: [{email: String, editable: Boolean, viewable: Boolean}],
+ profile_image: String
 });
 
 UserSchema.pre('save', function(next) {
