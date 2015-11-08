@@ -26,6 +26,10 @@ app.config(function ($routeProvider) {
       controller: 'SPController',
       templateUrl: 'views/socialPersonal.html'
     })
+    .when('/selfCare', {
+      controller: 'SCController',
+      templateUrl: 'views/selfCare.html'
+    })
     .otherwise({
       redirectTo: '/home'
     });
