@@ -1,4 +1,5 @@
-<form class="form-horizontal" action='' method="POST">
+<script src="javascripts/signup.js"></script>
+<form class="form-horizontal" id="myForm" action='' method="POST">
   <fieldset>
     <div id="legend">
       <legend class="">Register</legend>
@@ -23,14 +24,29 @@
       </div>
     </div>
  
-    <div class="control-group">
-      <!-- Password -->
+<!--     <div class="control-group">
       <label class="control-label"  for="password_confirm">Password (Confirm)</label>
       <div class="controls">
         <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
         <p class="help-block">Please confirm password</p>
       </div>
-    </div>
+    </div> -->
+
+    <!-- Create patient profiles and assign to user -->
+    <div class="container">
+  <div class="row">
+    <input type="hidden" name="count" value="1" />
+        <div class="control-group" id="fields">
+            <label class="control-label" for="field1">Add patient profiles you're in charge of</label>
+            <div class="controls" id="profs">
+                    <div id="field"><input autocomplete="off" class="input" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/><button id="b1" class="btn add-more" type="button">+</button></div>
+            <br>
+            </div>
+        </div>
+  </div>
+</div>
+
+    <!-- Assign existing patient profiles to other users -->
  
     <div class="control-group">
       <!-- Button -->

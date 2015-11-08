@@ -98,7 +98,7 @@ app.get('/login', function(req, res) {
 });
 
 app.post('/login', function(req, res, next) {
-  User.find({email: "jimmyw22@gmail.com"}, function(err,doc){
+  User.find({email: req.body.email}, function(err,doc){
     loggedInUser = doc[0];
     res.redirect('/');
   });
@@ -122,6 +122,7 @@ app.get('/signup', function(req, res) {
 });
 
 app.post('/signup', function(req, res) {
+  console.log(req.body);
   var user = new User({
       email: req.body.email,
       password: req.body.password
@@ -140,12 +141,6 @@ app.get('/logout', function(req, res){
   loggedInUser = null;
   req.logout();
   res.redirect('/');
-});
-
-app.get('/forgot', function(req, res) {
-  res.render('forgot', {
-    user: req.user
-  });
 });
 
 app.get('/app', function(req, res){
