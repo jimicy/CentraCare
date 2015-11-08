@@ -450,7 +450,10 @@ app.controller('MCController', ['$scope', function($scope){
 }]);
 
 app.controller('EmailController', ['$scope', function($scope){
-	var mail = $('#inputEmail').val().split(',');
+
+
+	$scope.submit = function(){
+			var mail = $('#inputEmail').val().split(',');
 	var content = JSON.parse(localStorage.getItem("Profile")).Content;
 	console.log(content)
 	var html = "<h1>Personal</h1>";
@@ -462,9 +465,7 @@ app.controller('EmailController', ['$scope', function($scope){
 		}
 	});
 	console.log(html);
-
-	$scope.submit = function(){
-		console.log(mail, html)
+	
 		localStorage.setItem("sendTo", mail);
 		$.ajax({
 			type: "POST",
