@@ -82,7 +82,13 @@ app.use('/patients', patients);
 
 app.get('/', function(req, res, next) {
   console.log(loggedInUser);
-  res.render('index', {user: loggedInUser});
+
+  if (loggedInUser) {
+    res.render('app', {user: loggedInUser});
+  }
+  else {
+    res.render('index', {user: loggedInUser});
+  }
   // res.render('index', {user: req.user});
 });
 
@@ -121,6 +127,8 @@ app.post('/signup', function(req, res) {
       password: req.body.password
     });
 
+  loggedInUser = user;
+
   user.save(function(err) {
     req.logIn(user, function(err) {
       res.redirect('/');
@@ -146,7 +154,7 @@ app.get('/app', function(req, res){
 app.post('/app', function(req, res){
   console.log(req.body);
   res.send(req.body);
-})
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
