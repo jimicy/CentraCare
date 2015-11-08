@@ -1,30 +1,255 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>Express HTML</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home</title>
+
+    <!-- Custom CSS -->
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <link href="stylesheets/common.css" rel="stylesheet">
+    <link href="stylesheets/stylish-portfolio.css" rel="stylesheet">
+
 </head>
-<body>
-  <div style="margin:100px;">
-    <nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <a class="navbar-brand" href="/">Express HTML</a>
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/about">About</a>
-      </li>
-      <li>
-        <a href="/sitemap">Sitemap</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-    <div class="jumbotron"  style="padding:40px;">
-      <h1>Hello, world!</h1>
-      <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+
+    <body>
+
+        <!-- Navigation -->
+        <!-- <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a> -->
+        <nav id="top-wrapper">
+            <ul class="top-nav">
+                <!-- <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a> -->
+                <li class="top-brand">
+                    <a href="index.html" ><img class="img-logo" src="images/logo.png">
+                    </a>
+                </li>
+                <span class="items">
+                    <li>
+                        <a href="index.html#top">Home</a>
+                    </li>
+                    <li>
+                        <a href="index.html#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="index.html#platform">Platform</a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact">Contact</a>
+                    </li>
+                </span>
+            </ul>
+        </nav>
+
+        <!-- Header -->
+        <header id="top" class="header">
+            <div class="text-vertical-center">
+                <h1 class="header-text">A central platform to share your story</h1>
+                <div>
+                    <a href="/login" class="btn btn-default">Log In</a>
+                    <a href="/signup" class="btn btn-info">Sign Up</a>
+                </div>
+                <a href="#about" class="btn btn-dark btn-lg">Learn More</a>
+            </div>
+        </header>
+
+        <!-- About -->
+        <section id="about" class="about text-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2>Everyone deserves to live with dignity</h2>
+                        <p class="lead text-info">That’s why we created CentraCare - a platform where persons with dementia and caregivers and document their medical and social history. Using our platform, you can easily share information with family members, caregivers, institutions, clinicians, and personal support workers in a way that facilitates knowledge transfer and creates a better experience for everyone.
+                        </p>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </section>
+
+        <!-- Services -->
+        <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+        <section id="platform" class="services bg-info text-white">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h2>What do we record?</h2>
+                        <hr class="small">
+                        <div class="row"> 
+
+                      <!--   <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div> **/ -->
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-heart-o fa-stack-1x text-info"></i>
+                                </span>
+                                <h4>
+                                    <strong>Medical History</strong>
+                                </h4>
+                                <p>Quickly learn about all medications, conditions, allergies, and more</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-book fa-stack-1x text-info"></i>
+                                </span>
+                                <h4>
+                                    <strong>Social History</strong>
+                                </h4>
+                                <p>Get a better understanding of what makes your friend, client, or family member happy. Learn about their favorite music, calming techniques, hobbies, and so on.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+<section id="portfolio" class="portfolio">   
+         <div class="text-vertical-center">
+            <h2 class="text-info">How can you use our platform?</h2>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p class="lead text-info"> If you’re a person with Dementia or their primary caregiver, you can use our platform to ensure that your wishes and desires are respected when you cannot see them through yourself. Using either a weblink or PDF document, you can share our platform with </p> 
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        </section>
+        <div class="container">
+        <div class="row text-vertical-center text-info">    
+        <div class="col-md-4">
+            <div class="service-item">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-info"></i>
+                    <i class="fa fa-user-md fa-stack-1x text-white"></i>
+                </span>
+                <h4>
+                    <strong>Clinicians</strong>
+                </h4>
+                <p>You might already have enough on your mind. Our platform ensures that you always have a detailed medical history with you when you visit the doctor</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="service-item">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-info"></i>
+                    <i class="fa fa-building-o fa-stack-1x text-white"></i>
+                </span>
+                <h4>
+                    <strong>Institutions</strong>
+                </h4>
+                <p>Moving yourself or a loved one into a managed care facility needs to happen quickly. Have all of the information you need to give any institution during the intake process organized in one location</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="service-item">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-info"></i>
+                    <i class="fa fa-users fa-stack-1x text-white"></i>
+                </span>
+                <h4>
+                    <strong>Other caregivers</strong>
+                </h4>
+                <p>Primary caregivers are not always available. Have all necessary information - including great ways to start a meaningful conversation and allergies - at hand for temporary caregivers such as family members and nurses</p>
+            </div>
+        </div> 
     </div>
-  </div>
+    </div>
+</div>
+        
+<!-- Footer -->
+<footer>
+<section id="contact">
+    <div class="call-to-action bg-info text-white">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+
+                <h4><strong>Team Deltafactor</strong>
+                </h4>
+                <p>Deltahacks<br>McMaster University, Ontario, Canada</p><!-- 
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-phone fa-fw"></i></li>
+                    <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
+                    </li>
+                </ul> -->
+                <br>
+                <hr class="small">
+                <p>Copyright Team Deltafactor 2015</p>
+            </div>
+        </div>
+    </div>
+    </section>
+</footer>
+
+<script>
+$(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+});
+</script>
+
 </body>
+
 </html>

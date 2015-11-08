@@ -1,0 +1,21 @@
+.form {
+	margin-top: 100px;
+}
+
+.form div {
+	margin: 0 auto;
+	width: 240px;
+}
+
+.form-control {
+	width: 240px;
+}
+
+.form-group {
+	padding-top: 25px;
+}
+
+.btn {
+	display: block;
+	margin: 25px auto;
+}

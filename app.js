@@ -48,6 +48,13 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/patients', patients);
 app.use('/login', login);
+app.get('/app', function(req, res){
+  res.render('app');
+});
+app.post('/app', function(req, res){
+  console.log(req.body);
+  res.send(req.body);
+})
 
 //authentication. Passport
 passport.use(new LocalStrategy(function(username, password, done) {
