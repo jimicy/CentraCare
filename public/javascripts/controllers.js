@@ -14,6 +14,7 @@ app.controller('ExportController', ['$scope', function($scope) {
   console.log("load export success");
 }]);
 
+
 app.controller('ProfileController', ['$scope', function($scope){
 
 	$scope.Questions = [
@@ -25,13 +26,13 @@ app.controller('ProfileController', ['$scope', function($scope){
 		{
 			Question: "Last name",
 			Type: "Text",
-			Answer: ""
+			Answer: "Jiang"
 		},
 		{
-			Question: "Sex",
-			Type: "Multiple Choice",
+			Question: "Gender",
+			Type: "MC",
 			Options: ["Male", "Female", "Other"],
-			Answer: ""
+			Answer: "Male"
 		},
 		{
 			Question: "Address",
@@ -55,7 +56,7 @@ app.controller('ProfileController', ['$scope', function($scope){
 		},
 		{
 			Question: "Martial Status",
-			Type: "Multiple Choice",
+			Type: "MC",
 			Options: ["Single", "Married", "Divorced", "Separated", "Common Law", "Widowed"],
 			Answer: ""
 		},
@@ -71,14 +72,13 @@ app.controller('ProfileController', ['$scope', function($scope){
 		},
 		{
 			Question: "Race/Ethnic Origin",
-			Type: "Multiple Choice",
+			Type: "MC",
 			Options: ["White", "Black", "Oriental", "Hispanic", "Aboriginal", "Other"],
 			Answer: ""
 		}
 	];
 
-	$scope.submit = function(form) {
-		var editedFields = [];
+	$scope.submit = function() {
 		var fields = $(".question")
 		$.each(fields, function(index, dom) {
 			var answer;
@@ -99,8 +99,32 @@ app.controller('ProfileController', ['$scope', function($scope){
 			},
 			dataType: "json"
 		});
+	};
 
+	$scope.getData = function(){
+
+	};
+
+	$scope.update = function() {
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer = $scope.Questions[index].Answer;
+			if (answer.length > 0) {
+				if ($(dom).hasClass('radio')) {
+					$(dom).find('input[value='+answer+']').prop("checked", true);
+				}else{
+					$(dom).val(answer)  ;
+				}
+			}
+			$scope.Questions[index].Answer = answer;
+		});
 	}
+
+	$scope.init = function() {
+		$scope.getData();
+		$scope.update();
+	}
+
 }]);
 
 app.controller('SPController', ['$scope', function($scope) {
@@ -148,7 +172,7 @@ app.controller('SPController', ['$scope', function($scope) {
 			Question: "How many close relaitonships do you have?",
 			Helper: "E.g. friends, family, spouse",
 			Type: "Text",
-			Answer: ""
+			Answer: "None"
 		},
 		{
 			Question: "Do you feel more comfortable with certain race (please specify)?",
@@ -180,5 +204,29 @@ app.controller('SPController', ['$scope', function($scope) {
 			dataType: "json"
 		});
 
+	}
+
+	$scope.getData = function(){
+
+	};
+
+	$scope.update = function() {
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer = $scope.Questions[index].Answer;
+			if (answer.length > 0) {
+				if ($(dom).hasClass('radio')) {
+					$(dom).find('input[value='+answer+']').prop("checked", true);
+				}else{
+					$(dom).val(answer)  ;
+				}
+			}
+			$scope.Questions[index].Answer = answer;
+		});
+	}
+
+	$scope.init = function() {
+		$scope.getData();
+		$scope.update();
 	}
 }]);

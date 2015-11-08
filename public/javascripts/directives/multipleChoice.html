@@ -1,6 +1,7 @@
 
 <div class="form-group question radio" id="{{'q'+index}}">
 	<label>{{info.Question}}</label>
+	<p class="helper">{{ info.Helper }}</p>
 	<div class="radio" ng-repeat="opt in info.Options">
 	  <label>
 	    <input type="radio" name="{{'q'+index}}" id="{{ 'q'+index + '-' + $index}}" value="{{opt}}">
