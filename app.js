@@ -233,7 +233,8 @@ app.post('/app', function(req, res){
 });
 
 app.post('/mail', function(req, res){
-  message.to = JSON.parse(req.body.sendTo).join();
+  console.log(req.body);
+  message.to = req.body.sendTo;
   message.text = req.body.text;
   message.html = req.body.text;
   transporter.sendMail(message, function(error, info) {
