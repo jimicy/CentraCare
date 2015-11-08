@@ -38,24 +38,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Routing
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var patients = require('./routes/patients');
-var login = require('./routes/login');
-
-app.use('/', routes);
-app.use('/users', users);
-app.use('/patients', patients);
-app.use('/login', login);
-
 //authentication. Passport
-passport.use(new LocalStrategy(function(username, password, done) {
-  User.findOne({ username: username }, function(err, user) {
+passport.use(new LocalStrategy(function(email, password, done) {
+  User.findOne({ email: email }, function(err, user) {
     if (err) return done(err);
-    if (!user) return done(null, false, { message: 'Incorrect username.' });
+    if (!user) return done(null, false, { message: 'Incorrect email.' });
     user.comparePassword(password, function(err, isMatch) {
       if (isMatch) {
+        console.log(user);
         return done(null, user);
       } else {
         return done(null, false, { message: 'Incorrect password.' });
@@ -71,6 +61,72 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(id, done) {
   User.findById(id, function(err, user) {
     done(err, user);
+  });
+});
+
+var loggedInUser;
+
+//Models
+var User = require('./models/User');
+
+//Routing
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var patients = require('./routes/patients');
+// var login = require('./routes/login');
+
+app.use('/', routes);
+app.use('/users', users);
+app.use('/patients', patients);
+// app.use('/login', login);
+
+app.get('/login', function(req, res) {
+  res.render('login', {user: loggedInUser});
+  // res.render('login', {user: req.user});
+});
+
+app.post('/login', function(req, res, next) {
+  loggedInUser = User.find({email: "jimmyw22@gmail.com"});
+  passport.authenticate('local', function(err, user, info) {
+    if (err) return next(err);
+    if (!user) {
+      return res.redirect('/login');
+    }
+    req.logIn(user, function(err) {
+      if (err) return next(err);
+      return res.redirect('/');
+    });
+  })(req, res, next);
+});
+
+app.get('/signup', function(req, res) {
+  res.render('signup', {
+    user: req.user
+  });
+});
+
+app.post('/signup', function(req, res) {
+  var user = new User({
+      email: req.body.email,
+      password: req.body.password
+    });
+
+  user.save(function(err) {
+    req.logIn(user, function(err) {
+      res.redirect('/');
+    });
+  });
+});
+
+app.get('/logout', function(req, res){
+  loggedInUser = null;
+  req.logout();
+  res.redirect('/');
+});
+
+app.get('/forgot', function(req, res) {
+  res.render('forgot', {
+    user: req.user
   });
 });
 

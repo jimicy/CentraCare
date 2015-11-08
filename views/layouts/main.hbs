@@ -4,11 +4,19 @@
   <title>DementiaHacks</title>
     <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="javascripts/bootstrap.min.js"></script>
-  <script src="javascripts/jquery.min.js"></script>
   <link rel="stylesheet" href="stylesheets/style.css">
 </head>
   <body>
-    {{{body}}}
+  <a href="/">Home</a>
+  {{#if user}}
+    <a href="/logout">Logout</a>
+  {{else}}
+    <a href="/login">Login</a>
+    <a href="/signup">Signup</a>
+  {{/if}}
+
+  {{{body}}}
   </body>
 </html>
