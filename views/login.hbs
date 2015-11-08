@@ -1,42 +1,54 @@
-<form class="form-horizontal" action='' method="POST">
-  <fieldset>
-    <div id="legend">
-      <legend class="">Register</legend>
-    </div>
- 
-    <div class="control-group">
-      <label class="control-label" for="email">E-mail</label>
-      <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-        <p class="help-block">Please provide your E-mail</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <label class="control-label" for="password">Password</label>
-      <div class="controls">
-        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-        <p class="help-block">Password should be at least 4 characters</p>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <div class="controls">
-        <button class="btn btn-success">Login</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
-
 <!-- <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <form class="form-horizontal" action='' method="POST">
+              <fieldset>
+                <div id="legend">
+                  <legend class="">Register</legend>
+              </div>
+
+              <div class="control-group">
+                  <label class="control-label" for="email">E-mail</label>
+                  <div class="controls col-sm-12">
+                    <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                    <p class="help-block">Please provide your E-mail</p>
+                </div>
+            </div>
+
+
+            <div class="control-group">
+              <label class="control-label" for="password">Password</label>
+
+              <div class="controls">
+                <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                <p class="help-block">Password should be at least 4 characters</p>
+            </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <button class="btn btn-success">Login</button>
+        </div>
+    </div>
+</fieldset>
+</form>
+</div>
+</div>
+
+// RANDOM STUFF: href="signup/" class="text-center new-account">Create an account </a><a
+</div> -->
+        <div class="col-sm-6 col-md-4 col-md-offset-4"></div>
+
+<div class="container>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
             <h1 class="text-center login-title">Log In</h1>
-            <div class="account-wall">
-                <form class="form-signin">
+            <div class="account-wall loginMargin">
+                <form class="form-signin" action='' method="POST">
+
                     <input type="text" class="form-control" placeholder="Email" required autofocus>
                     <input type="password" class="form-control" placeholder="Password" required>
-                    <button class="btn btn-lg btn-info btn-block" type="submit">
+                    <button class="btn-info btn-block btn-lg " type="submit">
                         Sign in</button>
                     <label class="checkbox pull-left">
                         <input type="checkbox" value="remember-me">
@@ -45,7 +57,6 @@
                     <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
                 </form>
             </div>
-            <a href="signup/" class="text-center new-account">Create an account </a>
         </div>
     </div>
-</div> -->
+</div>

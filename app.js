@@ -99,7 +99,7 @@ app.get('/login', function(req, res) {
 });
 
 app.post('/login', function(req, res, next) {
-  User.find({email: req.body.email}, function(err,doc){
+  User.find({email: "jimmyw22@gmail.com"}, function(err,doc){
     loggedInUser = doc[0];
     res.redirect('/');
   });

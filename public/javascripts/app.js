@@ -1,10 +1,10 @@
-var app = angular.module('dementiaApp', ['ngRoute', 'ngCookies']);
+var app = angular.module('dementiaApp', ['ngRoute']);
 
-app.config(function ($routeProvider) { 
-  $routeProvider 
-    .when('/home', { 
-      controller: 'HomeController', 
-      templateUrl: 'views/home.html' 
+app.config(function ($routeProvider) {
+  $routeProvider
+    .when('/home', {
+      controller: 'HomeController',
+      templateUrl: 'views/home.html'
     })
   	.when('/current', {
     	controller: 'CurUserController',
@@ -18,7 +18,15 @@ app.config(function ($routeProvider) {
       controller: 'ExportController',
       templateUrl: 'views/export.html'
     })
-    .otherwise({ 
-      redirectTo: '/home' 
-    }); 
+    .when('/profile', {
+      controller: 'ProfileController',
+      templateUrl: 'views/profile.html'
+    })
+    .when('/socialPersonal', {
+      controller: 'SPController',
+      templateUrl: 'views/socialPersonal.html'
+    })
+    .otherwise({
+      redirectTo: '/home'
+    });
 });
