@@ -28,55 +28,55 @@ app.controller('ProfileController', ['$scope', function($scope){
 			Question: "Last name",
 			Type: "Text",
 			Answer: "Jiang"
-		},
-		{
-			Question: "Gender",
-			Type: "MC",
-			Options: ["Male", "Female", "Other"],
-			Answer: "Male"
-		},
-		{
-			Question: "Address",
-			Type: "Text",
-			Answer: ""
-		},
-		{
-			Question: "Email",
-			Type: "Text",
-			Answer: ""
-		},
-		{
-			Question: "Date of birth (MM/DD/YYYY)",
-			Type: "Text",
-			Answer: ""
-		},
-		{
-			Question: "Country of birth",
-			Type: "Text",
-			Answer: ""
-		},
-		{
-			Question: "Martial Status",
-			Type: "MC",
-			Options: ["Single", "Married", "Divorced", "Separated", "Common Law", "Widowed"],
-			Answer: ""
-		},
-		{
-			Question: "Emergency Contact Name",
-			Type: "Text",
-			Answer: ""
-		},
-		{
-			Question: "Emergency Contact Number",
-			Type: "Text",
-			Answer: ""
-		},
-		{
-			Question: "Race/Ethnic Origin",
-			Type: "MC",
-			Options: ["White", "Black", "Oriental", "Hispanic", "Aboriginal", "Other"],
-			Answer: ""
 		}
+		// {
+		// 	Question: "Gender",
+		// 	Type: "MC",
+		// 	Options: ["Male", "Female", "Other"],
+		// 	Answer: "Male"
+		// },
+		// {
+		// 	Question: "Address",
+		// 	Type: "Text",
+		// 	Answer: ""
+		// },
+		// {
+		// 	Question: "Email",
+		// 	Type: "Text",
+		// 	Answer: ""
+		// },
+		// {
+		// 	Question: "Date of birth (MM/DD/YYYY)",
+		// 	Type: "Text",
+		// 	Answer: ""
+		// },
+		// {
+		// 	Question: "Country of birth",
+		// 	Type: "Text",
+		// 	Answer: ""
+		// },
+		// {
+		// 	Question: "Martial Status",
+		// 	Type: "MC",
+		// 	Options: ["Single", "Married", "Divorced", "Separated", "Common Law", "Widowed"],
+		// 	Answer: ""
+		// },
+		// {
+		// 	Question: "Emergency Contact Name",
+		// 	Type: "Text",
+		// 	Answer: ""
+		// },
+		// {
+		// 	Question: "Emergency Contact Number",
+		// 	Type: "Text",
+		// 	Answer: ""
+		// },
+		// {
+		// 	Question: "Race/Ethnic Origin",
+		// 	Type: "MC",
+		// 	Options: ["White", "Black", "Oriental", "Hispanic", "Aboriginal", "Other"],
+		// 	Answer: ""
+		// }
 	];
 
 	$scope.submit = function() {
