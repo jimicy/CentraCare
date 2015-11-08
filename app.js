@@ -84,7 +84,7 @@ var message = {
     to: '"Receiver Name" <wang638@mcmaster.ca>',
 
     // Subject of the message
-    subject: 'Patient Summary', //
+    subject: 'Patient Care Info', //
 
     headers: {
         'X-Laziness-level': 1000
@@ -233,9 +233,9 @@ app.post('/app', function(req, res){
 });
 
 app.post('/mail', function(req, res){
-  message.to = '"Receiver Name" <'+ JSON.parse(req.body.sendTo)[0]+'>';
-  message.subject = req.body.body;
-  console.log(message);
+  message.to = JSON.parse(req.body.sendTo).join();
+  message.text = req.body.text;
+  message.html = req.body.text;
   transporter.sendMail(message, function(error, info) {
     if (error) {
         console.log('Error occurred');
