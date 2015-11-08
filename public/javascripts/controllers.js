@@ -130,19 +130,20 @@ app.controller('ProfileController', ['$scope', function($scope){
 app.controller('SPController', ['$scope', function($scope) {
 	$scope.Questions = [
 		{
-			Question: "What language do you prefer?",
+			Question: "What language(s) do you prefer?",
+			Helper: "E.g English, French, Mandarin, Spanish, Italian, etc",
 			Type: "Text",
 			Answer: ""
 		},
 		{
-			Question: "What are your trigger words?",
-			Helper: "i.e. anxiety inducing words",
+			Question: "What are your trigger (anxiety inducing) words?",
+			Helper: "E.g. no, stop, never, etc.",
 			Type: "Text",
 			Answer: ""
 		},
 		{
-			Question: "What are your soothing words?",
-			Helper: "",
+			Question: "What are your soothing (relaxing) words?",
+			Helper: "E.g. relax, friend, warm, etc.",
 			Type: "Text",
 			Answer: ""
 		},
@@ -170,12 +171,13 @@ app.controller('SPController', ['$scope', function($scope) {
 		},
 		{
 			Question: "How many close relaitonships do you have?",
-			Helper: "E.g. friends, family, spouse",
+			Helper: "E.g. friends, family, spouse, etc.",
 			Type: "Text",
 			Answer: "None"
 		},
 		{
 			Question: "Do you feel more comfortable with certain race (please specify)?",
+			Helper: "E.g. Caucasian, African American, Oriental, Hispanic, Aboriginal, etc."
 			Type: "Text",
 			Answer: ""
 		}
