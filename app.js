@@ -140,6 +140,14 @@ app.get('/forgot', function(req, res) {
   });
 });
 
+app.get('/app', function(req, res){
+  res.render('app');
+});
+app.post('/app', function(req, res){
+  console.log(req.body);
+  res.send(req.body);
+})
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
