@@ -459,8 +459,7 @@ app.controller('EmailController', ['$scope', function($scope){
 		$.ajax({
 			type: "POST",
 			url: "/mail",
-			data: JSON.stringify({"sendTo": mail,
-								  "body": message }),
+			data: {"sendTo": mail, "body": message },
 			success: function(data){
 				console.log(data)
 			},
