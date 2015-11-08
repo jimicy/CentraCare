@@ -1,0 +1,10 @@
+<label><strong>{{info.Question}}</strong></label>
+<div class="form-group question checkbox" id="{{'q'+index}}">
+	<span class="helper">{{ info.Helper }}</span>
+	<div class="radio" ng-repeat="opt in info.Options">
+	  	<label>
+			<input type="checkbox" name="{{'q'+ index}}" id="{{ 'q' + index + '-' + $index}}" value="{{$index}}"> {{ opt }}
+		</label>
+	</div>
+
+</div>

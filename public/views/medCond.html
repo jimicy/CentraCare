@@ -1,6 +1,6 @@
-<h1>Profile</h1>
+<h1>Medical Conditions</h1>
 
-<form ng-submit="submit()" ng-controller="ProfileController" name="form">
+<form ng-submit="submit()" ng-controller="MCController" name="form">
 	<div ng-repeat="q in Questions">
 		<div ng-if="q.Type == 'Text' ">
 	        <app-text info="q" index="{{$index}}"></app-text>
@@ -10,6 +10,9 @@
 	    </div>
 	    <div ng-if="q.Type == 'MC' ">
 	        <app-multiple-choice info="q" index="{{$index}}"><app-multiple-choice>
+	    </div>
+	    <div ng-if="q.Type == 'Checkbox' ">
+	        <app-checkbox info="q" index="{{$index}}"><app-checkbox>
 	    </div>
 	</div>
 	<button class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-sm" type="submit">Submit</button>

@@ -28,55 +28,55 @@ app.controller('ProfileController', ['$scope', function($scope){
 			Question: "Last name",
 			Type: "Text",
 			Answer: "Jiang"
+		},
+		{
+			Question: "Gender",
+			Type: "MC",
+			Options: ["Male", "Female", "Other"],
+			Answer: "Male"
+		},
+		{
+			Question: "Address",
+			Type: "Text",
+			Answer: ""
+		},
+		{
+			Question: "Email",
+			Type: "Text",
+			Answer: ""
+		},
+		{
+			Question: "Date of birth (MM/DD/YYYY)",
+			Type: "Text",
+			Answer: ""
+		},
+		{
+			Question: "Country of birth",
+			Type: "Text",
+			Answer: ""
+		},
+		{
+			Question: "Martial Status",
+			Type: "MC",
+			Options: ["Single", "Married", "Divorced", "Separated", "Common Law", "Widowed"],
+			Answer: ""
+		},
+		{
+			Question: "Emergency Contact Name",
+			Type: "Text",
+			Answer: ""
+		},
+		{
+			Question: "Emergency Contact Number",
+			Type: "Text",
+			Answer: ""
+		},
+		{
+			Question: "Race/Ethnic Origin",
+			Type: "MC",
+			Options: ["White", "Black", "Oriental", "Hispanic", "Aboriginal", "Other"],
+			Answer: ""
 		}
-		// {
-		// 	Question: "Gender",
-		// 	Type: "MC",
-		// 	Options: ["Male", "Female", "Other"],
-		// 	Answer: "Male"
-		// },
-		// {
-		// 	Question: "Address",
-		// 	Type: "Text",
-		// 	Answer: ""
-		// },
-		// {
-		// 	Question: "Email",
-		// 	Type: "Text",
-		// 	Answer: ""
-		// },
-		// {
-		// 	Question: "Date of birth (MM/DD/YYYY)",
-		// 	Type: "Text",
-		// 	Answer: ""
-		// },
-		// {
-		// 	Question: "Country of birth",
-		// 	Type: "Text",
-		// 	Answer: ""
-		// },
-		// {
-		// 	Question: "Martial Status",
-		// 	Type: "MC",
-		// 	Options: ["Single", "Married", "Divorced", "Separated", "Common Law", "Widowed"],
-		// 	Answer: ""
-		// },
-		// {
-		// 	Question: "Emergency Contact Name",
-		// 	Type: "Text",
-		// 	Answer: ""
-		// },
-		// {
-		// 	Question: "Emergency Contact Number",
-		// 	Type: "Text",
-		// 	Answer: ""
-		// },
-		// {
-		// 	Question: "Race/Ethnic Origin",
-		// 	Type: "MC",
-		// 	Options: ["White", "Black", "Oriental", "Hispanic", "Aboriginal", "Other"],
-		// 	Answer: ""
-		// }
 	];
 
 	$scope.submit = function() {
@@ -91,18 +91,20 @@ app.controller('ProfileController', ['$scope', function($scope){
 			$scope.Questions[index].Answer = answer;
 		});
 
-		$.ajax({
-			type: "POST",
-			url: "/app",
-			data: JSON.stringify({"Forms": $scope.Questions}),
-			success: function(data){
-				console.log(data)
-			},
-			dataType: "json"
-		});
+		// $.ajax({
+		// 	type: "POST",
+		// 	url: "/app",
+		// 	data: JSON.stringify({"Forms": $scope.Questions}),
+		// 	success: function(data){
+		// 		console.log(data)
+		// 	},
+		// 	dataType: "json"
+		// });
+		localStorage.setItem("Profile", JSON.stringify({"Profile": $scope.Questions}));
 	};
 
 	$scope.getData = function(){
+		$scope.Questions = JSON.parse(localStorage.getItem("Profile")).Profile;
 
 	};
 
@@ -197,19 +199,20 @@ app.controller('SPController', ['$scope', function($scope) {
 			$scope.Questions[index].Answer = answer;
 		});
 
-		$.ajax({
-			type: "POST",
-			url: "/app",
-			data: JSON.stringify({"Forms": $scope.Questions}),
-			success: function(data){
-				console.log(data)
-			},
-			dataType: "json"
-		});
-
+		// $.ajax({
+		// 	type: "POST",
+		// 	url: "/app",
+		// 	data: JSON.stringify({"Forms": $scope.Questions}),
+		// 	success: function(data){
+		// 		console.log(data)
+		// 	},
+		// 	dataType: "json"
+		// });
+		localStorage.setItem("Personal", JSON.stringify({"Personal": $scope.Questions}));
 	}
 
 	$scope.getData = function(){
+		$scope.Questions = JSON.parse(localStorage.getItem("Personal")).Personal;
 
 	};
 
@@ -308,19 +311,21 @@ app.controller('SCController', ['$scope', function($scope){
 		});
 		console.log(temp=$scope.Questions)
 
-		$.ajax({
-			type: "POST",
-			url: "/app",
-			data: JSON.stringify({"Forms": $scope.Questions}),
-			success: function(data){
-				console.log(data)
-			},
-			dataType: "json"
-		});
+		// $.ajax({
+		// 	type: "POST",
+		// 	url: "/app",
+		// 	data: JSON.stringify({"Forms": $scope.Questions}),
+		// 	success: function(data){
+		// 		console.log(data)
+		// 	},
+		// 	dataType: "json"
+		// });
+		localStorage.setItem("selfCare", JSON.stringify({"selfCare": $scope.Questions}));
 
 	}
 
 	$scope.getData = function(){
+		$scope.Questions = JSON.parse(localStorage.getItem("selfCare")).selfCare;
 
 	};
 
@@ -344,4 +349,88 @@ app.controller('SCController', ['$scope', function($scope){
 		$scope.update();
 	}
 
+}]);
+
+app.controller('MCController', ['$scope', function($scope){
+
+	$scope.Questions = [
+		{
+			Question: "What stage of dementia are you at? ",
+			Type: "MC",
+			Options: ["Early", "Middle", "Late"],
+			Answer: ""
+		},
+		{
+			Question: "What other medical conditions do you have?",
+			Type: "Checkbox",
+			Options: ["Heart disease / Murmur / Angina", "High cholesterol", "High blood pressure", "Low blood pressure" , "Heartburn (reflux)", "Anemia or blood problems ", "Swollen ankles", "Shortness of breathe ", "Asthma", "Lung problems / cough", "Sinus problems", "Seasonal allergies", "Tonsillitis", "Ear problems", "Eye disorder / Glaucoma", "Seizures", "Stroke", "Headaches / Migraines", "Neurological problems", "Depression / Anxiety", "Psychiatric care", "Diabetes", "Kidney / Bladder problems", "Liver problems / Hepatitis", "Arthritis", "Cancer", "Ulcers/colitis", "Thyroid problems"],
+			Answer: ""
+
+		}
+	]
+
+	$scope.submit = function(form) {
+		var editedFields = [];
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer;
+			if ($(dom).hasClass('radio')) {
+				answer = ($(dom).find('input[name='+$(dom).attr("id")+']:checked').val());
+			}else if ($(dom).hasClass('checkbox')){
+				var list = $(dom).find('input[name="' + $(dom).attr("id") + '"]:checked');
+				var temp = [];
+				$.each(list, function(index, val) {
+					temp.push($(val).attr('value'));
+				});
+				answer = temp.toString();
+			}else{
+				answer = ($(dom).val());
+			}
+			$scope.Questions[index].Answer = answer;
+		});
+		console.log(temp=$scope.Questions)
+
+		// $.ajax({
+		// 	type: "POST",
+		// 	url: "/app",
+		// 	data: JSON.stringify({"Forms": $scope.Questions}),
+		// 	success: function(data){
+		// 		console.log(data)
+		// 	},
+		// 	dataType: "json"
+		// });
+		localStorage.setItem("medCond", JSON.stringify({"medCond": $scope.Questions}));
+
+	}
+
+	$scope.getData = function(){
+		$scope.Questions = JSON.parse(localStorage.getItem("medCond")).medCond;
+
+	};
+
+	$scope.update = function() {
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer = $scope.Questions[index].Answer;
+			console.log(answer)
+			if (typeof answer != undefined) {
+				if ($(dom).hasClass('radio')){
+					$(dom).find('input[value='+answer+']').prop("checked", true);
+				}else if ($(dom).hasClass('checkbox')){
+					var list = answer.split(",");
+					$.each(list, function(index, val) {
+						 $(dom).find('input[value='+val+']').prop("checked", true);
+					});
+				}else{
+					$(dom).val(answer)  ;
+				}
+			}
+			$scope.Questions[index].Answer = answer;
+		});
+	}
+
+	$scope.init = function() {
+		$scope.getData();
+		$scope.update();
+	}
 }])

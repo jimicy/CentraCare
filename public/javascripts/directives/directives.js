@@ -41,3 +41,14 @@ app.directive('appScale', function() {
 		templateUrl: 'javascripts/directives/scale.html'
 	};
 });
+
+app.directive('appCheckbox', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			info: '=',
+			index: '@'
+		},
+		templateUrl: 'javascripts/directives/checkbox.html'
+	};
+});

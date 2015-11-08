@@ -41,19 +41,26 @@
 
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li id="home"><a href="#/home" title="">Home</a></li>
+                <li id="home" class="leadHeader"><a href="#/home" title="">Home</a></li>
 
-                <li class="main-item">Social History</li>
+                <li class="main-item leadHeader">Social History</li>
                 <li class="sub-item"><a href="#/socialPersonal" title="">Personal</a></li>
-                <!-- <li class="sub-item"><a href="/selfCare" title="">Stationary Activities</a></li> -->
-                <!-- <li class="sub-item"><a href="" title="">Physical Activities</a></li> -->
+                <li class="sub-item"><a href="" title="">Stationary Activities</a></li>
+                <li class="sub-item"><a href="" title="">Physical Activities</a></li>
 
-                <li class="main-item">Medical History</li>
-                <li class="sub-item"><a href="#/selfCare" title="">Self-care Skills</a></li>
+<<<<<<< HEAD
+                <li class="main-item leadHeader">Medical History</li>
+                <li class="sub-item"><a href="" title="">Self-care Skills</a></li>
                 <li class="sub-item"><a href="" title="">Medical Conditions</a></li>
                 <!-- <li class="sub-item"><a href="" title="">Medication</a></li> -->
+=======
+                <li class="main-item">Medical History</li>
+                <li class="sub-item"><a href="#/selfCare" title="">Self-care Skills</a></li>
+                <li class="sub-item"><a href="#/medCond" title="">Medical Conditions</a></li>
+                <li class="sub-item"><a href="" title="">Medication</a></li>
+>>>>>>> 906fcc0812a3e803bec118aafddc78bb2a7aa66f
 
-                <li class="main-item">Settings</li>
+                <li class="main-item leadHeader">Settings</li>
                 <li class="sub-item"><a href="#/profile#main" title="">Profile</a></li>
                 <li class="sub-item"><a href="#/current#main" title="">Given Permissions</a></li>
                 <li class="sub-item"><a href="#/adduser#main" title="">Add Users Access</a></li>
@@ -64,6 +71,20 @@
 
         <div id="main" ng-view>
             
+        </div>
+
+        <div class="modal fade bs-example-modal-sm in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  <h4 class="modal-title" id="mySmallModalLabel">Information saved</h4>
+                </div>
+                <div class="modal-body">
+                  Click anywhere to continue.
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
         </div>
     </div>
 

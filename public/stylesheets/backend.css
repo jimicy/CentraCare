@@ -58,6 +58,11 @@
     line-height: 56px;
 }
 
+.leadHeader {
+    font-weight: bold;
+    font-size: 24px;
+}
+
 #home a {
     font-size: 24px;
 }
