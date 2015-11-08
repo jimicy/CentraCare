@@ -14,6 +14,7 @@ app.controller('ExportController', ['$scope', function($scope) {
   console.log("load export success");
 }]);
 
+var temp;
 
 app.controller('ProfileController', ['$scope', function($scope){
 
@@ -93,7 +94,7 @@ app.controller('ProfileController', ['$scope', function($scope){
 		$.ajax({
 			type: "POST",
 			url: "/app",
-			data: JSON.stringify($scope.Questions),
+			data: JSON.stringify({"Forms": $scope.Questions}),
 			success: function(data){
 				console.log(data)
 			},
@@ -199,7 +200,7 @@ app.controller('SPController', ['$scope', function($scope) {
 		$.ajax({
 			type: "POST",
 			url: "/app",
-			data: JSON.stringify($scope.Questions),
+			data: JSON.stringify({"Forms": $scope.Questions}),
 			success: function(data){
 				console.log(data)
 			},
@@ -305,11 +306,12 @@ app.controller('SCController', ['$scope', function($scope){
 			}
 			$scope.Questions[index].Answer = answer;
 		});
+		console.log(temp=$scope.Questions)
 
 		$.ajax({
 			type: "POST",
 			url: "/app",
-			data: JSON.stringify($scope.Questions),
+			data: JSON.stringify({"Forms": $scope.Questions}),
 			success: function(data){
 				console.log(data)
 			},
