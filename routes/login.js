@@ -2,10 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  Patient.find(function(err, users){
-    if (err) return next(err);
-    return res.send(users);
-  });
+  res.render('login', {user: req.user});
 });
 
 router.post('/', function(req, res, next) {
