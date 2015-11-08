@@ -68,16 +68,17 @@ var loggedInUser;
 
 //Models
 var User = require('./models/User');
+var Patient = require('./models/Patient');
 
 //Routing
 // var routes = require('./routes/index');
 var users = require('./routes/users');
-var patients = require('./routes/patients');
+// var patients = require('./routes/patients');
 // var login = require('./routes/login');
 
 // app.use('/', routes);
 app.use('/users', users);
-app.use('/patients', patients);
+// app.use('/patients', patients);
 // app.use('/login', login);
 
 app.get('/', function(req, res, next) {
@@ -122,10 +123,22 @@ app.get('/signup', function(req, res) {
 });
 
 app.post('/signup', function(req, res) {
+  var patient_permissions = [];
+  for (var patientName of req.body.patients.split(',')){
+    var newPatient = new Patient({
+      name: patientName
+    });
+
+    newPatient.save(function(err) {});
+
+    patient_permissions.push({patient_id: newPatient.id, editable: true, viewable: true});
+  }
+
   var user = new User({
       email: req.body.email,
-      password: req.body.password
-    });
+      password: req.body.password,
+      patient_permissions: patient_permissions
+  });
 
   loggedInUser = user;
 
@@ -140,12 +153,6 @@ app.get('/logout', function(req, res){
   loggedInUser = null;
   req.logout();
   res.redirect('/');
-});
-
-app.get('/forgot', function(req, res) {
-  res.render('forgot', {
-    user: req.user
-  });
 });
 
 app.get('/app', function(req, res){
