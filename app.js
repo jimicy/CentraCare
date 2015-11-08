@@ -81,6 +81,7 @@ app.use('/patients', patients);
 // app.use('/login', login);
 
 app.get('/', function(req, res, next) {
+  console.log(loggedInUser);
   res.render('index', {user: loggedInUser});
   // res.render('index', {user: req.user});
 });
@@ -91,8 +92,10 @@ app.get('/login', function(req, res) {
 });
 
 app.post('/login', function(req, res, next) {
-  loggedInUser = User.find({email: "jimmyw22@gmail.com"});
-  res.redirect('/');
+  User.find({email: "jimmyw22@gmail.com"}, function(err,doc){
+    loggedInUser = doc[0];
+    res.redirect('/');
+  });
 
 /*  passport.authenticate('local', function(err, user, info) {
     if (err) return next(err);
