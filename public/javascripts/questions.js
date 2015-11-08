@@ -12,7 +12,7 @@ Profile =
 	},
 	{
 		Question: "Sex",
-		Type: "Multiple Choice",
+		Type: "MC",
 		Options: ["Male", "Female", "Other"],
 		Answer: ""
 	},
@@ -38,7 +38,7 @@ Profile =
 	},
 	{
 		Question: "Martial Status",
-		Type: "Multiple Choice",
+		Type: "MC",
 		Options: ["Single", "Married", "Divorced", "Separated", "Common Law", "Widowed"],
 		Answer: ""
 	},
@@ -54,7 +54,7 @@ Profile =
 	},
 	{
 		Question: "Race/Ethnic Origin",
-		Type: "Multiple Choice",
+		Type: "MC",
 		Options: ["White", "Black", "Oriental", "Hispanic", "Aboriginal", "Other"],
 		Answer: ""
 	}
@@ -126,6 +126,27 @@ SocialPersonal =
 			Type: "Text",
 			Answer: ""
 		}
+	
+
+selfCare = [
+	{
+		Question: "Personal Appearance"
+		Type: "Scale"
+		Options: ["Maintains a neat and tidy appearance without help or prompting from staff
+", "Maintains neat appearance but needs some supervision", "Maintains a neat appearance with close and regular supervision
+", "Does not maintain neat appearance, even with supervision. Major problems
+with this item"],
+		Answer: ""
+	}
+]
+
+newvar = [
+	{
+		Question: "",
+		Type: "MC",
+		Options: []
+		Answer:""
+	},
 	
 
 	selfCare = [

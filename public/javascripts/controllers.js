@@ -14,6 +14,7 @@ app.controller('ExportController', ['$scope', function($scope) {
   console.log("load export success");
 }]);
 
+
 app.controller('ProfileController', ['$scope', function($scope){
 
 	$scope.Questions = [
@@ -25,13 +26,13 @@ app.controller('ProfileController', ['$scope', function($scope){
 		{
 			Question: "Last name",
 			Type: "Text",
-			Answer: ""
+			Answer: "Jiang"
 		},
 		{
-			Question: "Sex",
-			Type: "Multiple Choice",
+			Question: "Gender",
+			Type: "MC",
 			Options: ["Male", "Female", "Other"],
-			Answer: ""
+			Answer: "Male"
 		},
 		{
 			Question: "Address",
@@ -55,7 +56,7 @@ app.controller('ProfileController', ['$scope', function($scope){
 		},
 		{
 			Question: "Martial Status",
-			Type: "Multiple Choice",
+			Type: "MC",
 			Options: ["Single", "Married", "Divorced", "Separated", "Common Law", "Widowed"],
 			Answer: ""
 		},
@@ -71,14 +72,13 @@ app.controller('ProfileController', ['$scope', function($scope){
 		},
 		{
 			Question: "Race/Ethnic Origin",
-			Type: "Multiple Choice",
+			Type: "MC",
 			Options: ["White", "Black", "Oriental", "Hispanic", "Aboriginal", "Other"],
 			Answer: ""
 		}
 	];
 
-	$scope.submit = function(form) {
-		var editedFields = [];
+	$scope.submit = function() {
 		var fields = $(".question")
 		$.each(fields, function(index, dom) {
 			var answer;
@@ -99,26 +99,51 @@ app.controller('ProfileController', ['$scope', function($scope){
 			},
 			dataType: "json"
 		});
+	};
 
+	$scope.getData = function(){
+
+	};
+
+	$scope.update = function() {
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer = $scope.Questions[index].Answer;
+			if (answer.length > 0) {
+				if ($(dom).hasClass('radio')) {
+					$(dom).find('input[value='+answer+']').prop("checked", true);
+				}else{
+					$(dom).val(answer)  ;
+				}
+			}
+			$scope.Questions[index].Answer = answer;
+		});
 	}
+
+	$scope.init = function() {
+		$scope.getData();
+		$scope.update();
+	}
+
 }]);
 
 app.controller('SPController', ['$scope', function($scope) {
 	$scope.Questions = [
 		{
-			Question: "What language do you prefer?",
+			Question: "What language(s) do you prefer?",
+			Helper: "E.g English, French, Mandarin, Spanish, Italian, etc",
 			Type: "Text",
 			Answer: ""
 		},
 		{
-			Question: "What are your trigger words?",
-			Helper: "i.e. anxiety inducing words",
+			Question: "What are your trigger (anxiety inducing) words?",
+			Helper: "E.g. no, stop, never, etc.",
 			Type: "Text",
 			Answer: ""
 		},
 		{
-			Question: "What are your soothing words?",
-			Helper: "",
+			Question: "What are your soothing (relaxing) words?",
+			Helper: "E.g. relax, friend, warm, etc.",
 			Type: "Text",
 			Answer: ""
 		},
@@ -146,12 +171,13 @@ app.controller('SPController', ['$scope', function($scope) {
 		},
 		{
 			Question: "How many close relaitonships do you have?",
-			Helper: "E.g. friends, family, spouse",
+			Helper: "E.g. friends, family, spouse, etc.",
 			Type: "Text",
-			Answer: ""
+			Answer: "None"
 		},
 		{
 			Question: "Do you feel more comfortable with certain race (please specify)?",
+			Helper: "E.g. Caucasian, African American, Oriental, Hispanic, Aboriginal, etc."
 			Type: "Text",
 			Answer: ""
 		}
@@ -180,5 +206,29 @@ app.controller('SPController', ['$scope', function($scope) {
 			dataType: "json"
 		});
 
+	}
+
+	$scope.getData = function(){
+
+	};
+
+	$scope.update = function() {
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer = $scope.Questions[index].Answer;
+			if (answer.length > 0) {
+				if ($(dom).hasClass('radio')) {
+					$(dom).find('input[value='+answer+']').prop("checked", true);
+				}else{
+					$(dom).val(answer)  ;
+				}
+			}
+			$scope.Questions[index].Answer = answer;
+		});
+	}
+
+	$scope.init = function() {
+		$scope.getData();
+		$scope.update();
 	}
 }]);

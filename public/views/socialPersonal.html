@@ -8,9 +8,12 @@
 	    <div ng-if="q.Type == 'Textarea' ">
 	        <app-textarea info="q" index="{{$index}}"><app-textarea>
 	    </div>
-	    <div ng-if="q.Type == 'Multiple Choice' ">
+	    <div ng-if="q.Type == 'MC' ">
 	        <app-multiple-choice info="q" index="{{$index}}"><app-multiple-choice>
 	    </div>
 	</div>
 	<button class="btn btn-info" type="submit">Submit</button>
 </form>
+
+
+{{init()}}
