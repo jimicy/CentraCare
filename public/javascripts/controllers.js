@@ -322,6 +322,7 @@ app.controller('SCController', ['$scope', function($scope){
 		// });
 		localStorage.setItem("selfCare", JSON.stringify({"selfCare": $scope.Questions}));
 
+
 	}
 
 	$scope.getData = function(){
@@ -436,20 +437,10 @@ app.controller('MCController', ['$scope', function($scope){
 }]);
 
 app.controller('EmailController', ['$scope', function($scope){
-	$scope.submit = function(event) {
-		event.preventDefault();
-		var sendTo = $('#inputEmail').val().split(',');
-		var msg = "<img src=\"http://i.imgur.com/ja28yLG.jpg\" />"
+	var sendTo = $('#inputEmail').val().split(',');
+	var msg = "<img src=\"http://i.imgur.com/ja28yLG.jpg\" />"
 
-		$.ajax({
-			type: "POST",
-			url: "/mail",
-			data: JSON.stringify({"sendTo": sendTo,
-								  "body": msg }),
-			success: function(data){
-				console.log(data)
-			},
-			dataType: "json"
-		});
+	$scope.submit = function(){
+		mail.send(sendTo, msg);
 	};
 }])
