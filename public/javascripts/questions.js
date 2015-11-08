@@ -147,9 +147,6 @@ stageDementia = [
 		Options: ["Early", "Middle", "Late"]
 		Answer:""
 	},
-]
-
-medicalConditions = [
 	{
 		Question: "What other medical conditions do you have?"
 		Type: "CheckList"

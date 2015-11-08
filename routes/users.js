@@ -18,7 +18,7 @@ router.get('/:user_id', function(req, res, next) {
 
   User.findById(user_id, function(err, user){
     if (err) return next(err);
-    return res.send(user);
+    return res.json(user);
   });
 });
 

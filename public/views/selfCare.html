@@ -1,6 +1,8 @@
-<h1>Personal</h1>
+<h1>Self-Care Skills</h1>
+<p>Please rank the patient's level of self-care skills, of 1 being the lowest.</p>
+<form ng-submit="submit(form)" ng-controller="SCController" name="form">
 
-<form ng-submit="submit()" ng-controller="SPController" name="form">
+
 	<div ng-repeat="q in Questions">
 		<div ng-if="q.Type == 'Text' ">
 	        <app-text info="q" index="{{$index}}"></app-text>
@@ -11,6 +13,10 @@
 	    <div ng-if="q.Type == 'MC' ">
 	        <app-multiple-choice info="q" index="{{$index}}"><app-multiple-choice>
 	    </div>
+	    <div ng-if="q.Type == 'Scale' ">
+	        <app-scale info="q" index="{{$index}}"><app-scale>
+	    </div>
+
 	</div>
 	<button class="btn btn-info" type="submit">Submit</button>
 </form>

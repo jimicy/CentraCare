@@ -30,3 +30,25 @@ app.directive('appMultipleChoice', function() {
 		templateUrl: 'javascripts/directives/multipleChoice.html'
 	};
 });
+
+app.directive('appScale', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			info: '=',
+			index: '@'
+		},
+		templateUrl: 'javascripts/directives/scale.html'
+	};
+});
+
+app.directive('appCheckbox', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			info: '=',
+			index: '@'
+		},
+		templateUrl: 'javascripts/directives/checkbox.html'
+	};
+});

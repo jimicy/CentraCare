@@ -1,3 +1,63 @@
+<<<<<<< HEAD
+<script src="javascripts/signup.js"></script>
+<form class="form-horizontal" id="myForm" action='' method="POST">
+  <fieldset>
+    <div id="legend">
+      <legend class="">Register</legend>
+    </div>
+    <div class="control-group">
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="email">E-mail</label>
+      <div class="controls">
+        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+        <p class="help-block">Please provide your E-mail</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="password">Password</label>
+      <div class="controls">
+        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+        <p class="help-block">Password should be at least 4 characters</p>
+      </div>
+    </div>
+ 
+<!--     <div class="control-group">
+      <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+      <div class="controls">
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+        <p class="help-block">Please confirm password</p>
+      </div>
+    </div> -->
+
+    <!-- Create patient profiles and assign to user -->
+    <div class="container">
+  <div class="row">
+    <input type="hidden" name="count" value="1" />
+        <div class="control-group" id="fields">
+            <label class="control-label" for="field1">Add patient profiles you're in charge of</label>
+            <div class="controls" id="profs">
+                    <div id="field"><input autocomplete="off" class="input" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/><button id="b1" class="btn add-more" type="button">+</button></div>
+            <br>
+            </div>
+        </div>
+  </div>
+</div>
+
+    <!-- Assign existing patient profiles to other users -->
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success">Register</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
 
      <!--           <form class="form-signin" action='' method="POST">
 
@@ -7,7 +67,7 @@
     </div> -->
 
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
             <h1 class="text-center login-title">Log In</h1>
@@ -29,59 +89,4 @@
                 </div>
             </div>
         </div>
-    </div>
-
-<!--
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-          <h1 class=" login-title">Registhher</h1>
-         <div class="account-wall loginMargin">
-
-          <form class="form-horizontal" action='' method="POST">
-            <fieldset>
-              <div id="legend" class="text-center">
-                <legend class="">Register</legend>
-              </div>
-
-                <div class="control-group">
-                  
-                  <label class="control-label" for="email">E-mail</label>
-                  <div class="controls">
-                    <input type="text" id="email" name="email" placeholder="" class="input-xlarge" class="form-control">
-                    <p class="help-block">Please provide your E-mail</p>
-                  </div>
-                </div>
-
-                <div class="control-group">
-                  <!-- Password
-                  <label class="control-label" class="form-control" for="password" >Password</label>
-                  <div class="controls">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="" class="input-xlarge">
-                    <p class="help-block">Password should be at least 4 characters</p>
-                  </div>
-                </div>
-
-                <div class="control-group">
-                  <!-- Password
-                  <label class="control-label"  for="password_confirm">Password (Confirm)</label>
-                  <div class="controls">
-                    <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
-                    <p class="help-block">Please confirm password</p>
-                  </div>
-
-                </div>
-
-                <div class="control-group">
-                  <!-- Button 
-                  <div class="controls">
-                    <button class="btn btn-success btn-info btn-block btn-lg"">Register</button>
-                    <label class="checkbox pull-left">
-                      <input type="checkbox" value="remember-me">
-                      Remember me
-                    </label>
-                    <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
-                  </div>
-                </div> 
-              </fieldset>
-            </form> -->
+    </div> -->
