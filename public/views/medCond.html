@@ -1,0 +1,21 @@
+<h1>Medical Conditions</h1>
+
+<form ng-submit="submit()" ng-controller="MCController" name="form">
+	<div ng-repeat="q in Questions">
+		<div ng-if="q.Type == 'Text' ">
+	        <app-text info="q" index="{{$index}}"></app-text>
+	    </div>
+	    <div ng-if="q.Type == 'Textarea' ">
+	        <app-textarea info="q" index="{{$index}}"><app-textarea>
+	    </div>
+	    <div ng-if="q.Type == 'MC' ">
+	        <app-multiple-choice info="q" index="{{$index}}"><app-multiple-choice>
+	    </div>
+	    <div ng-if="q.Type == 'Checkbox' ">
+	        <app-checkbox info="q" index="{{$index}}"><app-checkbox>
+	    </div>
+	</div>
+	<button class="btn btn-info" type="submit">Submit</button>
+</form>
+
+{{init()}}

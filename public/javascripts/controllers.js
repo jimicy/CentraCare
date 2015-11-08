@@ -109,7 +109,7 @@ app.controller('ProfileController', ['$scope', function($scope){
 	$scope.update = function() {
 		var fields = $(".question")
 		$.each(fields, function(index, dom) {
-			var answer = $scope.Questions[index].Answer;
+			var answer = $scope.Questions[index].Answers;
 			if (answer.length > 0) {
 				if ($(dom).hasClass('radio')) {
 					$(dom).find('input[value='+answer+']').prop("checked", true);
@@ -216,7 +216,7 @@ app.controller('SPController', ['$scope', function($scope) {
 	$scope.update = function() {
 		var fields = $(".question")
 		$.each(fields, function(index, dom) {
-			var answer = $scope.Questions[index].Answer;
+			var answer = $scope.Questions[index].Answers;
 			if (answer.length > 0) {
 				if ($(dom).hasClass('radio')) {
 					$(dom).find('input[value='+answer+']').prop("checked", true);
@@ -327,7 +327,7 @@ app.controller('SCController', ['$scope', function($scope){
 	$scope.update = function() {
 		var fields = $(".question")
 		$.each(fields, function(index, dom) {
-			var answer = $scope.Questions[index].Answer;
+			var answer = $scope.Questions[index].Answers;
 			if (answer.length > 0) {
 				if ($(dom).hasClass('radio')) {
 					$(dom).find('input[value='+answer+']').prop("checked", true);
@@ -344,4 +344,86 @@ app.controller('SCController', ['$scope', function($scope){
 		$scope.update();
 	}
 
+}]);
+
+app.controller('MCController', ['$scope', function($scope){
+
+	$scope.Questions = [
+		{
+			Question: "What stage of dementia are you at? ",
+			Type: "MC",
+			Options: ["Early", "Middle", "Late"],
+			Answer: "Late"
+		},
+		{
+			Question: "What other medical conditions do you have?",
+			Type: "Checkbox",
+			Options: ["Heart disease / Murmur / Angina", "High cholesterol", "High blood pressure", "Low blood pressure" , "Heartburn (reflux)", "Anemia or blood problems ", "Swollen ankles", "Shortness of breathe ", "Asthma", "Lung problems / cough", "Sinus problems", "Seasonal allergies", "Tonsillitis", "Ear problems", "Eye disorder / Glaucoma", "Seizures", "Stroke", "Headaches / Migraines", "Neurological problems", "Depression / Anxiety", "Psychiatric care", "Diabetes", "Kidney / Bladder problems", "Liver problems / Hepatitis", "Arthritis", "Cancer", "Ulcers/colitis", "Thyroid problems"],
+			Answers: "2,3,4"
+
+		}
+	]
+
+	$scope.submit = function(form) {
+		var editedFields = [];
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer;
+			if ($(dom).hasClass('radio')) {
+				answer = ($(dom).find('input[name='+$(dom).attr("id")+']:checked').val());
+			}else if ($(dom).hasClass('checkbox')){
+				var list = $(dom).find('input[name="' + $(dom).attr("id") + '"]:checked');
+				var temp = [];
+				$.each(list, function(index, val) {
+					temp.push($(val).attr('value'));
+				});
+				answer = temp.toString();
+			}else{
+				answer = ($(dom).val());
+			}
+			$scope.Questions[index].Answer = answer;
+		});
+		console.log(temp=$scope.Questions)
+
+		$.ajax({
+			type: "POST",
+			url: "/app",
+			data: JSON.stringify({"Forms": $scope.Questions}),
+			success: function(data){
+				console.log(data)
+			},
+			dataType: "json"
+		});
+
+	}
+
+	$scope.getData = function(){
+
+	};
+
+	$scope.update = function() {
+		var fields = $(".question")
+		$.each(fields, function(index, dom) {
+			var answer = $scope.Questions[index].Answers;
+			console.log(answer)
+			if (typeof answer === 'undefined' || answer.length>1) {
+				if ($(dom).hasClass('radio')){
+					$(dom).find('input[value='+answer+']').prop("checked", true);
+				}else if ($(dom).hasClass('checkbox')){
+					answer = answer.split(",");
+					$.each(answer, function(index, val) {
+						 $(dom).find('input[value='+val+']').prop("checked", true);
+					});
+				}else{
+					$(dom).val(answer)  ;
+				}
+			}
+			$scope.Questions[index].Answer = answer;
+		});
+	}
+
+	$scope.init = function() {
+		$scope.getData();
+		$scope.update();
+	}
 }])
