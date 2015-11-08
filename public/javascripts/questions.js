@@ -120,4 +120,16 @@ SocialPersonal =
 			Type: "Text",
 			Answer: ""
 		}
-	]
+	
+
+selfCare = [
+	{
+		Question: "Personal Appearance"
+		Type: "Scale"
+		Options: ["Maintains a neat and tidy appearance without help or prompting from staff
+", "Maintains neat appearance but needs some supervision", "Maintains a neat appearance with close and regular supervision
+", "Does not maintain neat appearance, even with supervision. Major problems
+with this item"],
+		Answer: ""
+	}
+]
