@@ -21,6 +21,14 @@ How we built it
 --
 We started with some simple ideas to connect caregivers. They then gradually developed this idea through brainstorming and discussing with different caregivers. After the idea is set, Shawn and Dave started drawing some mock up while Zichen implement it with HTML and CSS. Shawn, Dave, and Mei kept working on refining the idea and collecting data and feedbacks from caregivers, while Zichen started building the front-end with AngularJS and Jimmy started building the backend with Node.js. It was the first time for Zichen and Jimmy to work with a MEAN Stack, but despise the strugling, both of them learnt a lot about the development tools. We finnaly managed to build a prototype before the hacking stops, and spent the rest few hours resting and practicing pitching.
 
+Screenshots
+--
+![Imgur](http://i.imgur.com/FjSvYOy.png)
+![Imgur](http://i.imgur.com/ciCR4Se.png)
+![Imgur](http://i.imgur.com/KI5vozu.png)
+![Imgur](http://i.imgur.com/2UsxObk.png)
+![Imgur](http://i.imgur.com/z84NPCm.png)
+
 Challenges we ran into
 --
 We were really focused on building a practical solution that would help caregivers, so we spent a ton of time looking at research evidence and conducting market research. Our team had a lot of disagreements during the ideation stage as a result, but we came through in the end.
