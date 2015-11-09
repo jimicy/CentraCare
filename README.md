@@ -25,7 +25,7 @@ Screenshots
 --
 ![Imgur](http://i.imgur.com/FjSvYOy.png)
 ![Imgur](http://i.imgur.com/ciCR4Se.png)
-![Imgur](http://i.imgur.com/KI5vozu.png)
+![Imgur](http://i.imgur.com/znRwnJK.png)
 ![Imgur](http://i.imgur.com/2PWos1N.png)
 ![Imgur](http://i.imgur.com/z84NPCm.png)
 
