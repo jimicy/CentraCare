@@ -48,3 +48,6 @@ Built With
 `css3`
 `javascript`
 `adobe-illustrator`
+`awesomeness`
+`hardworking`
+`sleeplessness`
