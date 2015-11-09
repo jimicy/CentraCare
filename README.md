@@ -1,5 +1,5 @@
 #CentraCare
-Created by Mei Lin Chen, [Zichen Jiang](http://alicj.github.io), Dave Nidumolu, [Jimmmy Wang](http://jimicy.com), Shawn Wu
+Created by [Mei Lin Chen](https://github.com/Mei-Lin-Chen), [Zichen Jiang](http://alicj.github.io), [Dave Nidumolu](https://github.com/dnidumolu), [Jimmmy Wang](http://jimicy.com), Shawn Wu
 
 Inspiration
 --
