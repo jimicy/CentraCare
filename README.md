@@ -1,4 +1,5 @@
 #CentraCare
+Mei Lin Chen, [Zichen Jiang](http://alicj.github.io), Dave Nidumolu, [Jimmmy Wang](http://jimicy.com), Shawn Wu
 
 Inspiration
 --
@@ -18,18 +19,26 @@ Long-term care homes gather similar information during the intake process, but t
 
 How we built it
 --
-We mocked up everything on paper and HTML/CSS/JS. Afterwards we built it with the full stack
+We started with some simple ideas to connect caregivers. They then gradually developed this idea through brainstorming and discussing with different caregivers. After the idea is set, Shawn and Dave started drawing some mock up while Zichen implement it with HTML and CSS. Shawn, Dave, and Mei kept working on refining the idea and collecting data and feedbacks from caregivers, while Zichen started building the front-end with AngularJS and Jimmy started building the backend with Node.js. It was the first time for Zichen and Jimmy to work with a MEAN Stack, but despise the strugling, both of them learnt a lot about the development tools. We finnaly managed to build a prototype before the hacking stops, and spent the rest few hours resting and practicing pitching.
 
 Challenges we ran into
 --
 We were really focused on building a practical solution that would help caregivers, so we spent a ton of time looking at research evidence and conducting market research. Our team had a lot of disagreements during the ideation stage as a result, but we came through in the end.
 
-What I learned
+What we learned
 --
-A lot about dementia. I think my whole team now has a stronger understanding of the challenges found across the spectrum of individuals involved with persons who have this condition. It would be great to see where our ideas can go or whether we can come up with anything else that can support care for persons with dementia.
+We learnt a lot about dementia. I think my whole team now has a stronger understanding of the challenges found across the spectrum of individuals involved with persons who have this condition. It would be great to see where our ideas can go or whether we can come up with anything else that can support care for persons with dementia.
 
+>Through this experience, we have learnt so much about a particular group of people in need, who actually play big roles in some of our lives. Even though we had conflicts, arguments, and even fights over different opinions, but these proved that we are working together to solve a problem with different point of view. And also we witnessed how a wonderful idea can be cultivated during all these interactions. I truly thank you for all the efforts and sleeplessness you have put in during the weekend.
+
+-- Zichen Jiang
+
+>I personally found that the dedication each of you put in was phenomenal. I regret for not being able to stay until the end, but the amount of work that you guys put in on this was beyond call of duty. I really had a lot of fun working with you guys and it was a valuable experience overall. Thanks guys!
+
+-- Shawn Wu
 
 Built With
+--
 `mongodb`
 `angular.js`
 `node.js`
