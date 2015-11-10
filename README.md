@@ -37,13 +37,21 @@ What we learned
 --
 We learnt a lot about dementia. I think my whole team now has a stronger understanding of the challenges found across the spectrum of individuals involved with persons who have this condition. It would be great to see where our ideas can go or whether we can come up with anything else that can support care for persons with dementia.
 
->Through this experience, we have learnt so much about a particular group of people in need, who actually play big roles in some of our lives. Even though we had conflicts, arguments, and even fights over different opinions, but these proved that we are working together to solve a problem with different point of view. And also we witnessed how a wonderful idea can be cultivated during all these interactions. I truly thank you for all the efforts and sleeplessness you have put in during the weekend.
+> Through this experience, we have learnt so much about a particular group of people in need, who actually play big roles in some of our lives. Even though we had conflicts, arguments, and even fights over different opinions, but these proved that we are working together to solve a problem with different point of view. And also we witnessed how a wonderful idea can be cultivated during all these interactions. I truly thank you for all the efforts and sleeplessness you have put in during the weekend.
 
 -- Zichen Jiang
 
->I personally found that the dedication each of you put in was phenomenal. I regret for not being able to stay until the end, but the amount of work that you guys put in on this was beyond call of duty. I really had a lot of fun working with you guys and it was a valuable experience overall. Thanks guys!
+> I personally found that the dedication each of you put in was phenomenal. I regret for not being able to stay until the end, but the amount of work that you guys put in on this was beyond call of duty. I really had a lot of fun working with you guys and it was a valuable experience overall. Thanks guys!
 
 -- Shawn Wu
+
+> I absolutely loved working with you guys, you were just an amazing team that was supportive of each other every step of the way (from brainstorming to running on little to no sleep). A big thank you to everyone on the team for putting in every last drop of effort to make this happen. Also, the fact that we came a vote away to being on top really shows that dementia caregivers see the potential in our product.
+
+-- Mei Lin Chen
+
+> It was amazing to see how every unique skillset and viewpoint came together beautifully throughout the weekend. I learned so much from all of you and I hope that I'll have more chances in the future. Through all of the heated discussions, coding, and 12-7AM chats, thank you so much for everything you have done. 
+
+-- Dave Nidumolu
 
 Built With
 --
