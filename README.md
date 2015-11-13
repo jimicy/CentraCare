@@ -1,5 +1,5 @@
 #CentraCare
-Created by [Mei Lin Chen](https://github.com/Mei-Lin-Chen), [Zichen Jiang](http://alicj.github.io), [Dave Nidumolu](https://github.com/dnidumolu), [Jimmy Wang](http://jimicy.com), Shawn Wu
+Created by [Mei Lin Chen](https://github.com/Mei-Lin-Chen), [Zichen Jiang](http://alicj.github.io), [Dave Nidumolu](https://github.com/dnidumolu), [Jimmy Wang](http://jimicy.com), Shawn Wu  
 Shoutout to Debby Kaplan and Ron Beleno who provided enormous and priceless help during the hackathon! 
 Inspiration
 --
