@@ -1,6 +1,6 @@
 #CentraCare
-Created by [Mei Lin Chen](https://github.com/Mei-Lin-Chen), [Zichen Jiang](http://alicj.github.io), [Dave Nidumolu](https://github.com/dnidumolu), [Jimmy Wang](http://jimicy.com), Shawn Wu
-
+Created by [Mei Lin Chen](https://github.com/Mei-Lin-Chen), [Zichen Jiang](http://alicj.github.io), [Dave Nidumolu](https://github.com/dnidumolu), [Jimmy Wang](http://jimicy.com), Shawn Wu  
+Shoutout to Debby Kaplan and Ron Beleno who provided enormous and priceless help during the hackathon! 
 Inspiration
 --
 We built this at DementiaHacks Toronto 2015. The central theme was applying tech to all areas of dementia care and research including support for clinicians, institutions, persons with dementia, and researchers.
